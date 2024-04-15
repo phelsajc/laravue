@@ -100,8 +100,8 @@ export const constantRoutes = [
       {
         path: 'index',
         component: () => import('@/views/documentation/index'),
-        name: 'Documentation',
-        meta: { title: 'documentation', icon: 'documentation', noCache: true },
+        name: 'DocumentationX',
+        meta: { title: 'documentationV', icon: 'documentation', noCache: true },
       },
     ],
   },

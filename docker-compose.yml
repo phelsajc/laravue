@@ -1,16 +1,16 @@
 version: "3"
 
 services:
-  laravel:
-    build:
-      context: .
+  laravel:    
+    build: .
     working_dir: /var/www
-    volumes:
-      - ./:/var/www
-      - ./docker/docker.env:/var/www/.env
+    container_name: laravue
     ports:
-      - "8000:8000"
-
+      - 8080:8080
+    volumes:
+      - ./docker/php/php.ini:/usr/local/etc/php/conf.d/php.ini
+      - ./docker/apache2/httpd-vhosts.conf:/etc/apache2/sites-enabled/000-default.conf
+      - ./:/var/www
     depends_on:
       - mysql
       - redis
@@ -20,13 +20,16 @@ services:
 
   mysql:
     image: mysql:5.7
+    restart: always
+    environment:
+      - MYSQL_DATABASE=laravue
+      - MYSQL_USER=carlo
+      - MYSQL_PASSWORD=P@ssw0rd
+      - MYSQL_ALLOW_EMPTY_PASSWORD=true
+    expose:
+      - "3306"
     ports:
       - "3306:3306"
     volumes:
       - ./docker/mysql:/var/lib/mysql
-    environment:
-      MYSQL_DATABASE: laravue
-      MYSQL_USER: laravue
-      MYSQL_PASSWORD: laravue
-      MYSQL_ROOT_PASSWORD: root
 

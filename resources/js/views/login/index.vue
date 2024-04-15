@@ -3,8 +3,8 @@
     <div class="login-container">
       <div class="login-image" :style="{ 'background-image': 'url(' + loginBackground + ')' }">
         <div class="photo-credit">
-          <h4>Danang - Vietnam</h4>
-          <span>Photo by Kiril Dobrev on Unsplash</span>
+          <h4>Upgraded & Maintained this version by</h4>
+          <span>John Carlo C. Lucasan</span>
         </div>
       </div>
       <div class="login-content">
@@ -62,7 +62,7 @@ import LangSelect from '@/components/LangSelect';
 import { validEmail } from '@/utils/validate';
 import { csrf } from '@/api/auth';
 import logo from '@/assets/login/logo.png';
-import loginBackground from '@/assets/login/login_background.jpg';
+import loginBackground from '@/assets/login/tech.jpg';
 
 export default {
   name: 'Login',
@@ -236,7 +236,7 @@ $textColor:#eee;
       .photo-credit {
         justify-content: flex-end;
         align-self: flex-end;
-        background-color: rgba(255,255,255,0.8);
+        background-color: rgba(255, 255, 255, 0);
         margin: 10px;
         padding: 5px 8px;
 

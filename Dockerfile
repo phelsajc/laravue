@@ -1,25 +1,20 @@
-# Set the base image for subsequent instructions
-FROM php:7.3
+#FROM php:7.4-apache
+FROM php:8.0-apache
+LABEL maintainer="Alefe Souza <contact@alefesouza.com>"
 
-WORKDIR /var/www
+RUN a2enmod rewrite
 
-# Update packages
+RUN apt-get update \
+  && apt-get install -y libzip-dev unzip zlib1g-dev libicu-dev wget gnupg g++ git openssh-client libpng-dev iproute2 \
+  && docker-php-ext-configure intl \
+  && docker-php-ext-install intl pdo_mysql zip gd
 
-RUN curl -sL https://deb.nodesource.com/setup_16.x | bash - \
-    && apt-get update \
-    && apt-get install -y nodejs netcat libmcrypt-dev libjpeg-dev libpng-dev libzip-dev libfreetype6-dev libbz2-dev nodejs git \
-    && apt-get clean
+RUN pecl install -f xdebug && docker-php-ext-enable xdebug;
 
-# Install extensions
-RUN docker-php-ext-install pdo_mysql mbstring zip exif pcntl
-RUN docker-php-ext-configure gd --with-gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ --with-png-dir=/usr/include/
-RUN docker-php-ext-install gd
+RUN curl -sL https://deb.nodesource.com/setup_12.x | bash
 
-# Install composer
+RUN apt-get update \
+  && apt-get install -y nodejs
+
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
-
-COPY . .
-COPY .env.example .env
-
-CMD ["bash", "./laravue-entrypoint.sh"]
 

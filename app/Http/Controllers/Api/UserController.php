@@ -115,9 +115,9 @@ class UserController extends BaseController
         if ($user === null) {
             return response()->json(['error' => 'User not found'], 404);
         }
-        if ($user->isAdmin()) {
+        /* if ($user->isAdmin()) {
             return response()->json(['error' => 'Admin can not be modified'], 403);
-        }
+        } */
 
         $currentUser = Auth::user();
         if (!$currentUser->isAdmin()
@@ -157,9 +157,9 @@ class UserController extends BaseController
             return response()->json(['error' => 'User not found'], 404);
         }
 
-        if ($user->isAdmin()) {
+        /* if ($user->isAdmin()) {
             return response()->json(['error' => 'Admin can not be modified'], 403);
-        }
+        } */
 
         $permissionIds = $request->get('permissions', []);
         $rolePermissionIds = array_map(

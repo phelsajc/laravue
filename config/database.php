@@ -43,6 +43,24 @@ return [
             'foreign_key_constraints' => env('DB_FOREIGN_KEYS', true),
         ],
 
+        /* 'mysql' => [
+            'driver' => 'mysql',
+            'host' =>  '192.168.112.233',
+            'port' => '3306',
+            'database' => 'laravue',
+            'username' => 'carlo',
+            'password' => 'P@ssw0rd',
+            'charset' => 'utf8mb4',
+            'collation' => 'utf8mb4_unicode_ci',
+            'prefix' => '',
+            'prefix_indexes' => true,
+            'strict' => true,
+            'engine' => null,
+            'options' => extension_loaded('pdo_mysql') ? array_filter([
+                PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
+            ]) : [],
+        ], */
+        
         'mysql' => [
             'driver' => 'mysql',
             'url' => env('DATABASE_URL'),

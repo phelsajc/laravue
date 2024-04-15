@@ -4,10 +4,17 @@ services:
   - mysql:5.7
 
 variables:
-  MYSQL_DATABASE: homestead
-  MYSQL_ROOT_PASSWORD: secret
+  #MYSQL_DATABASE: laravue
+  #MYSQL_ROOT_PASSWORD:
+  #DB_HOST: 192.168.112.233
+  #DB_USERNAME: carlo
+
+  
+  MYSQL_DATABASE: laravue
+  MYSQL_ALLOW_EMPTY_PASSWORD: 'true'
   DB_HOST: mysql
-  DB_USERNAME: root
+  DB_USERNAME: carlo
+  DB_PASSWORD: 'P@ssw0rd'
 
 stages:
   - test

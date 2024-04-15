@@ -33,6 +33,7 @@ class AuthController extends BaseController
         }
 
         $user = $request->user();
+        $token = $user->createToken($user->name.'-AuthToken')->plainTextToken;
 
         return response()->json(new JsonResponse(new UserResource($user)), Response::HTTP_OK);
     }

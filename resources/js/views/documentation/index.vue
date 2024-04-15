@@ -10,7 +10,7 @@
 import DropdownMenu from '@/components/Share/DropdownMenu';
 
 export default {
-  name: 'Documentation',
+  name: 'DocumentationY',
   components: { DropdownMenu },
   data() {
     return {
