@@ -1,0 +1,48 @@
+/*!
+  * vue-router v3.5.4
+  * (c) 2022 Evan You
+  * @license MIT
+  */
+
+/*!
+ * Vue.js v2.6.10
+ * (c) 2014-2019 Evan You
+ * Released under the MIT License.
+ */
+
+/*!
+ * tui-editor
+ * @version 1.4.10
+ * @author NHN FE Development Lab <dl_javascript@nhn.com> (https://nhn.github.io/tui.editor/)
+ * @license MIT
+ */
+
+/*!
+ * vue-i18n v8.27.2 
+ * (c) 2022 kazuya kawaguchi
+ * Released under the MIT License.
+ */
+
+/*! cpexcel.js (C) 2013-present SheetJS -- http://sheetjs.com */
+
+/*! cputils.js (C) 2013-present SheetJS -- http://sheetjs.com */
+
+/**
+ * vuex v3.1.1
+ * (c) 2019 Evan You
+ * @license MIT
+ */
+
+/**!
+ * Sortable 1.10.2
+ * @author	RubaXa   <trash@rubaxa.org>
+ * @author	owenm    <owen23355@gmail.com>
+ * @license MIT
+ */
+
+/**!
+ * Sortable 1.15.0
+ * @author	RubaXa   <trash@rubaxa.org>
+ * @author	owenm    <owen23355@gmail.com>
+ * @license MIT
+ */
